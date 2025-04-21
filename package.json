@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express-async-handler": "^1.2.0",
+    "react-router-dom": "^6.29.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

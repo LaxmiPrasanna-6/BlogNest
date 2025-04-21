@@ -1,0 +1,68 @@
+/* Custom Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduced gap */
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 350px;
+    box-sizing: border-box;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .author-details {
+    text-align: end;
+    margin-bottom: 10px;
+  }
+  
+  .rounded-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .text-secondary {
+    color: #6c757d;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f05855;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .card-footer {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .text-secondary {
+    color: #6c757d;
+  }
+  

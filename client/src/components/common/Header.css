@@ -1,0 +1,148 @@
+/* Header.css */
+.header-container {
+  background: linear-gradient(135deg, #ff6b6b, #ff9a76, #ffd93d);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #2d3436 !important;
+  margin: 0 15px;
+  padding: 8px 15px !important;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background-color: #ff7675;
+  transform: translateY(-2px);
+}
+
+.signout-btn {
+  border-radius: 25px;
+  padding: 8px 25px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Home.css */
+.animated-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.role-selection-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.role-radio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.form-check {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.form-check:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 1rem auto;
+}
+
+.form-check-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.get-started-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ff9a76);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.error-message {
+  background: #ffe9ec;
+  color: #ff4757;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #ff4757;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.user-info-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .role-radio {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-container {
+    padding: 0.5rem;
+  }
+  
+  .nav-link {
+    margin: 0 8px;
+    padding: 8px 12px !important;
+  }
+}

@@ -1,0 +1,101 @@
+/* Home.css */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-background {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #886a6a, #494746, #e7e7e7, #272625);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* .welcome-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+} */
+
+/* Role Selection Container */
+.role-selection-container {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  text-align: left;
+}
+
+.role-options {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.role-option {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(53, 36, 36);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.role-option input {
+  display: none;
+}
+
+/* Unique colors for each role */
+
+
+
+
+
+
+/* Hover effect */
+.role-option:hover {
+  opacity: 0.8;
+}
+
+/* Selected effect */
+.role-option:has(input:checked) {
+  outline: 3px solid rgb(235, 222, 222);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

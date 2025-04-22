@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@clerk/clerk-react'
-
+import { getBaseUrl } from '../../../utils/config'
 
 function ArticleByID() {
 
@@ -37,7 +37,7 @@ function ArticleByID() {
     articleAfterChanges.dateOfModification = currentDate.getDate() + "-" + currentDate.getMonth() + "-" + currentDate.getFullYear()
 
     //make http post req
-    let res = await axios.put(`http://localhost:3000/author-api/article/${articleAfterChanges.articleId}`,
+    let res = await axios.put(`${getBaseUrl()}/author-api/article/${articleAfterChanges.articleId}`,
       articleAfterChanges,
       {
         headers: {
@@ -61,7 +61,7 @@ function ArticleByID() {
     commentObj.nameOfUser=currentUser.firstName;
     console.log(commentObj)
     //http put
-    let res=await axios.put(`http://localhost:3000/user-api/comment/${currentArticle.articleId}`,commentObj);
+    let res=await axios.put(`${getBaseUrl()}/user-api/comment/${currentArticle.articleId}`,commentObj);
     if(res.data.message==='comment added'){
       setCommentStatus(res.data.message)
     }
@@ -71,7 +71,7 @@ function ArticleByID() {
   //delete article
   async function deleteArticle(){
     state.isArticleActive=false;
-    let res=await axios.put(`http://localhost:3000/author-api/articles/${state.articleId}`,state)
+    let res=await axios.put(`${getBaseUrl()}/author-api/articles/${state.articleId}`,state)
     if(res.data.message==='article deleted or restored'){
       setCurrentArticle(res.data.payload)
   }
@@ -79,7 +79,7 @@ function ArticleByID() {
   //restore article
   async function restoreArticle(){
     state.isArticleActive=true;
-    let res=await axios.put(`http://localhost:3000/author-api/articles/${state.articleId}`,state)
+    let res=await axios.put(`${getBaseUrl()}/author-api/articles/${state.articleId}`,state)
     if(res.data.message==='article deleted or restored'){
         setCurrentArticle(res.data.payload)
     }

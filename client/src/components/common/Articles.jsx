@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "@clerk/clerk-react";
 import '../common/Articles.css'
+import { getBaseUrl } from '../../../utils/config';
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
@@ -16,7 +17,7 @@ function Articles() {
   async function getArticles() {
     try {
       const token = await getToken();
-      const res = await axios.get('http://localhost:3000/author-api/articles', {
+      const res = await axios.get('${getBaseUrl()}/author-api/articles', {
         headers: { Authorization: `Bearer ${token}` }
       });
       console.log('Response:', res.data);

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.jpg'
 import '../common/Home.css'
+import { getBaseUrl } from '../../../utils/config'
 function Home() {
   const { currentUser, setCurrentUser } = useContext(userAuthorContextObj)
   const { isSignedIn, user, isLoaded } = useUser()
@@ -18,7 +19,7 @@ function Home() {
     let res = null;
     try {
       if (selectedRole === 'author') {
-        res = await axios.post('http://localhost:3000/author-api/author', currentUser)
+        res = await axios.post('${getBaseUrl()}/author-api/author', currentUser)
         let { message, payload } = res.data;
         if (message === 'author') {
           setCurrentUser({ ...currentUser, ...payload })
@@ -27,7 +28,7 @@ function Home() {
         }
       }
       if (selectedRole === 'user') {
-        res = await axios.post('http://localhost:3000/user-api/user', currentUser)
+        res = await axios.post('${getBaseUrl()}/user-api/user', currentUser)
         let { message, payload } = res.data;
         if (message === 'user') {
           setCurrentUser({ ...currentUser, ...payload })
@@ -36,7 +37,7 @@ function Home() {
         }
       }
       if (selectedRole === 'admin') {
-        res = await axios.post('http://localhost:3000/admin-api/admin', currentUser)
+        res = await axios.post('${getBaseUrl()}/admin-api/admin', currentUser)
         let { message, payload } = res.data;
         if (message === 'admin') {
           setCurrentUser({ ...currentUser, ...payload })

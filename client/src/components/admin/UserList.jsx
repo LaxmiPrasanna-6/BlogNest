@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import "./UserList.css"
 import { adminContextObj } from "../../contexts/AdminContext";
-
+import { getBaseUrl } from "../../../utils/config";
 function UserList() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
@@ -16,7 +16,7 @@ function UserList() {
   async function toggleDisableEnable(userObj) {
     try {
       const updatedUser = { ...userObj, isActive: !userObj.isActive };
-      const res = await axios.put(`http://localhost:3000/admin-api/user/${userObj._id}`, updatedUser);
+      const res = await axios.put(`${getBaseUrl()}/admin-api/user/${userObj._id}`, updatedUser);
 
       if (res.data.message === "updated") {
         // Fixed 2: Proper state update
@@ -37,7 +37,7 @@ function UserList() {
 
   async function getUsers() {
     try {
-      const res = await axios.get("http://localhost:3000/admin-api/users");
+      const res = await axios.get("${getBaseUrl()}/admin-api/users");
       console.log("API response:", res);
       console.log("html res:", res.data);
   

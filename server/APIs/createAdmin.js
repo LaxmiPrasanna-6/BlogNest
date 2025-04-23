@@ -1,4 +1,4 @@
-const Admin = require("../models/adminModel");
+const Admin = require("../Models/adminModel");
 const UserAuthor = require("../Models/UserAuthor");
 
 async function createAdmin(req, res) {

@@ -12,7 +12,7 @@ app.use(cors())
 app.set("trust proxy", true);
 mongoose.connect(process.env.DBURL)
 .then(()=>{
-    app.listen(port,()=>console.log('Connected to server',port))
+    app.listen(port,"0.0.0.0",()=>console.log('Connected to server',port))
     console.log("Database connection successful")
 })
 .catch(err=>{
